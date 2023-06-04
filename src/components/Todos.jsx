@@ -1,5 +1,6 @@
 import React from 'react'
 import './Todos.css'
+import { useNavigate } from 'react-router-dom'
 const data =
 [
     {
@@ -16,7 +17,12 @@ const data =
     }
 ]
 const Todos = () => {
-  
+  const navigate = useNavigate();
+
+  const startQuiz = () => {
+    navigate('/quiz')
+  }
+
   return (
     <>
       <div className ="card">
@@ -37,7 +43,7 @@ const Todos = () => {
               </div>
               <h6>Chapter 4</h6>
               <h2>Callbacks & Closures</h2>
-              <button className="btn">Continue</button>
+              <button className="btn" onClick={startQuiz}>Continue</button>
             </div>
           </div>
         </div>
