@@ -42,7 +42,7 @@ const Profile = () => {
             </div>
             <div>
               <button
-                className="bg-red-400 text-white p-1 rounded-md"
+                className="bg-blue-900 text-white p-1 rounded-md"
                 onClick={logoutUser}
               >
                 Logout
@@ -50,7 +50,7 @@ const Profile = () => {
             </div>
           </div>
           {/* TODO FORM */}
-          <TodoForm />
+          {/* <TodoForm /> */}
           {/* TODOS BOX */}
           <Todos />
         </>
