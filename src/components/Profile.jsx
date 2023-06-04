@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import {account} from '../appwrite/appwriteConfig'
-import { useNavigate, Link } from 'react-router-dom'
-import TodoForm from './TodoForm'
+import React from 'react'
+import { useNavigate} from 'react-router-dom'
 import Todos from './Todos'
 import NavBar from './navBar'
 const Profile = () => {

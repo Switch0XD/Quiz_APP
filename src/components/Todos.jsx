@@ -18,11 +18,10 @@ const data =
 ]
 const Todos = () => {
   const navigate = useNavigate();
-
-  const startQuiz = () => {
-    navigate('/quiz')
+  const startQuiz = (name) => {
+    console.log(name);
+    navigate(`/quiz/${name}`)
   }
-
   return (
     <>
       <div className ="card">
@@ -43,7 +42,7 @@ const Todos = () => {
               </div>
               <h6>Chapter 4</h6>
               <h2>Callbacks & Closures</h2>
-              <button className="btn" onClick={startQuiz}>Continue</button>
+              <button className="btn" onClick={()=>startQuiz(item.name)}>Continue</button>
             </div>
           </div>
         </div>
