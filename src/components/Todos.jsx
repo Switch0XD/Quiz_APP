@@ -4,16 +4,22 @@ import { useNavigate } from 'react-router-dom'
 const data =
 [
     {
-        name : "javascript"
+        name : "DevOps"
     },
     {
-        name : "React"
+        name : "Code"
     },
     {
-        name : "Docker"
+        name : "Linux"
     },
     {
-        name : "Kubernetes"
+        name : "SQL"
+    },
+    {
+      name : "Docker"
+    },
+    {
+      name : "CMS"
     }
 ]
 const Todos = () => {
