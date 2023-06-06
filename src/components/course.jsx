@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Card from "./UI/Card";
+import Card from "./Ui/Cards.jsx";
 
-const SetupQuiz = ({ setQuestions }) => {
+const Course = ({ setQuestions }) => {
   const [questionsAmount, setQuestionsAmount] = useState(0);
   const navigate = useNavigate();
 
@@ -19,6 +19,7 @@ const SetupQuiz = ({ setQuestions }) => {
         </h1>
         <form onSubmit={fromSubmitHandler} className="pl-6 pr-6 flex flex-col">
           <label className="pb-1">Number of questions</label>
+
           <input
             type="number"
             max={50}
@@ -46,4 +47,4 @@ const SetupQuiz = ({ setQuestions }) => {
   );
 };
 
-export default SetupQuiz;
+export default Course;
