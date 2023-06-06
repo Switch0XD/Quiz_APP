@@ -8,7 +8,11 @@ import Question from "./components/Questions";
 import SetupQuiz from "./components/course";
 
 function App() {
-  const [questions, setQuestions] = useState();
+  const [filters, setFilters] = useState({
+    noOfQuestions: "",
+    category: "",
+    difficulty: "",
+  });
   return (
     <div className="background flex">
       <BrowserRouter>
@@ -17,10 +21,10 @@ function App() {
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/profile" element={<Profile />} />
           {/* <Route exact path="/quiz/:name" element={<Quiz />} /> */}
-          <Route path="/quiz/:name" element={<SetupQuiz setQuestions={setQuestions} />} />
+          <Route path="/quiz/:name" element={<SetupQuiz setFilters={setFilters} />} />
           <Route
             path="/questions"
-            element={<Question questions={questions} />}
+            element={<Question filters={filters} />}
           />
         </Routes>
       </BrowserRouter>

@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "./Ui/Cards.jsx";
+import { useParams } from "react-router-dom";
 
-const Course = ({ setQuestions }) => {
+const Course = ({ setFilters }) => {
+  const tech= useParams();
+  // console.log(typeof(tech.name));
   const [questionsAmount, setQuestionsAmount] = useState(0);
+  const [questionsLevel, setQuestionsLevel] = useState("easy"); // ["easy", "medium", "hard"
   const navigate = useNavigate();
-
+  // useEffect(() => {
+  //   console.log("1 : ", typeof(questionsAmount)); 
+  //   console.log("2 ",typeof(questionsLevel));
+  // },[questionsAmount,questionsLevel]);
   const fromSubmitHandler = (event) => {
     event.preventDefault();
-    setQuestions(questionsAmount);
+    setFilters({
+      noOfQuestions: questionsAmount,
+      category: tech.name,
+      difficulty: questionsLevel,
+    });
     navigate("/questions");
   };
   return (
@@ -28,7 +39,7 @@ const Course = ({ setQuestions }) => {
             onChange={(e) => setQuestionsAmount(e.target.value)}
           />
           <label className="pt-6">Select Difficulty</label>
-          <select className="border-2 border-slate-800 w-96 rounded-3xl p-2">
+          <select  onChange={(e) => setQuestionsLevel(e.target.value)} className="border-2 border-slate-800 w-96 rounded-3xl p-2">
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
