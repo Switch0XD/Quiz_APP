@@ -12,7 +12,6 @@ code {
     monospace;
 } */
 
-
 @import url("https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap");
 
 @tailwind base;
@@ -43,4 +42,15 @@ code {
 .btn-txt {
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hideScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
