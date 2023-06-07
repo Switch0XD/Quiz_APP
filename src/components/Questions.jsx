@@ -1,43 +1,46 @@
-import React, { useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Ui/Cards";
 import { AiFillCaretDown } from "react-icons/ai";
-import {getQuestionsData} from '../Api/index'
+import { getQuestionsData } from "../Api/index";
 
 const Question = ({ filters }) => {
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [questions, setQuestions] = useState();
   const [counter, setCounter] = useState(0);
-  var i=0;
+  var i = 0;
   useEffect(() => {
-    getQuestionsData(filters.noOfQuestions, filters.category, filters.difficulty)
-      .then(data => setQuestions(data))
-      .catch(error => console.error(error));
+    getQuestionsData(
+      filters.noOfQuestions,
+      filters.category,
+      filters.difficulty
+    )
+      .then((data) => setQuestions(data))
+      .catch((error) => console.error(error));
     // console.log(questions);
     // setCurrentQuestion[questions[0]];
-    // console.log(currentQuestion);   
+    // console.log(currentQuestion);
   }, []);
 
   useEffect(() => {
     if (questions) {
-      console.log("1 : ",questions);
+      console.log("1 : ", questions);
       setCurrentQuestion(questions[i]);
-      console.log("2: ",currentQuestion);
+      console.log("2: ", currentQuestion);
     }
   }, [questions]);
 
   const changeQuestion = () => {
     console.log("hello");
-    if (counter < questions.length || counter<filters.noOfQuestions) {
-      setCounter(counter+1);
+    if (counter < questions.length || counter < filters.noOfQuestions) {
+      setCounter(counter + 1);
       setCurrentQuestion(questions[counter]);
       // if(counter < questions.length){
       //   setCounter(counter+1);
       // }
-    }
-    else{
+    } else {
       alert("Quiz is over");
     }
-  }
+  };
 
   // const checkAnswer = () => {
 
@@ -48,7 +51,7 @@ const Question = ({ filters }) => {
   // },[])
   return (
     <div className="flex flex-col w-screen place-content-center items-center">
-      <Card>
+      <Card className="w-1/2 h-1/2 overflow-y-scroll hideScroll">
         <small className="text-right pt-4 pr-4 text-sm text-green-500 bold">
           {`Correct answers: ${counter}/${filters.noOfQuestions}`}
         </small>
@@ -95,7 +98,9 @@ const Question = ({ filters }) => {
       </Card>
       <div className="pt-8 pb-2 flex flex-col place-content-center items-center">
         <button
-          onClick={() => {changeQuestion()}}
+          onClick={() => {
+            changeQuestion();
+          }}
           className="w-12 h-12 bg-yellow-300 rounded-full 
           text-3xl flex place-content-center items-center p-2 text-white hover:shadow-xl ease-in-out duration-300"
         >

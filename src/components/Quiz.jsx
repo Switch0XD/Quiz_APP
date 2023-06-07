@@ -1,10 +1,9 @@
-import React,{useState , useEffect}from 'react'
-import NavBar from './navBar'
-import Course from './course'
-import {getQuestionsData} from '../Api/index'
+import React, { useState, useEffect } from "react";
+import NavBar from "./navBar";
+import Course from "./SetupQuiz";
+import { getQuestionsData } from "../Api/index";
 
 const Quiz = () => {
-
   // console.log("hello");
   // useEffect(() => {
   //   console.log( getQuestionsData()
@@ -14,10 +13,10 @@ const Quiz = () => {
 
   return (
     <>
-        <NavBar />
-        <Course />
+      <NavBar />
+      <Course />
     </>
-  )
-}
+  );
+};
 
-export default Quiz
+export default Quiz;
