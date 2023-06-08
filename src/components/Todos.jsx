@@ -2,26 +2,26 @@ import React from 'react'
 import './Todos.css'
 import { useNavigate } from 'react-router-dom'
 const data =
-[
+  [
     {
-        name : "DevOps"
+      name: "DevOps"
     },
     {
-        name : "Code"
+      name: "Code"
     },
     {
-        name : "Linux"
+      name: "Linux"
     },
     {
-        name : "SQL"
+      name: "SQL"
     },
     {
-      name : "Docker"
+      name: "Docker"
     },
     {
-      name : "CMS"
+      name: "CMS"
     }
-]
+  ]
 const Todos = () => {
   const navigate = useNavigate();
   const startQuiz = (name) => {
@@ -30,30 +30,30 @@ const Todos = () => {
   }
   return (
     <>
-      <div className ="card">
-      {data.map((item) => (
-        <div className="courses-container">
-          <div className="course">
-            <div className="course-preview">
-              <h6>Course</h6>
-              <h2>{item.name}</h2>
-              <a href="#">View all chapters <i className="fas fa-chevron-right"></i></a>
-            </div>
-            <div className="course-info">
-              <div className="progress-container">
-                <div className="progress"></div>
-                <span className="progress-text">
-                  6/9 Challenges
-                </span>
+      <div className="card grid grid-cols-2 pt-20  ">
+        {data.map((item) => (
+          <div className="courses-container">
+            <div className="course">
+              <div className="course-preview">
+                <h6>Course</h6>
+                <h2>{item.name}</h2>
+                <a href="#">View all chapters <i className="fas fa-chevron-right"></i></a>
               </div>
-              <h6>Chapter 4</h6>
-              <h2>Callbacks & Closures</h2>
-              <button className="btn" onClick={()=>startQuiz(item.name)}>Continue</button>
+              <div className="course-info">
+                <div className="progress-container">
+                  <div className="progress"></div>
+                  <span className="progress-text">
+                    6/9 Challenges
+                  </span>
+                </div>
+                <h6>Chapter 4</h6>
+                <h2>Callbacks & Closures</h2>
+                <button className="btn" onClick={() => startQuiz(item.name)}>Continue</button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}  
-      
+        ))}
+
       </div>
     </>
   )

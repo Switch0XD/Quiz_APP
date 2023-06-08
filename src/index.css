@@ -24,11 +24,29 @@ code {
   padding: 0;
 }
 
-.background {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1010%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1011%26quot%3b)'%3e%3c/rect%3e%3cpath d='M1920 0L1440.71 0L1920 327.51z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1440.71 0L1920 327.51L1920 592.36L654.4000000000001 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M654.4000000000001 0L1920 592.36L1920 809.86L385.8400000000001 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M385.84000000000015 0L1920 809.86L1920 960.53L217.69000000000014 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1080L216.64 1080L0 617.74z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 617.74L216.64 1080L828.88 1080L0 606.11z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 606.11L828.88 1080L1316.94 1080L0 379.47z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 379.47L1316.94 1080L1326.1100000000001 1080L0 212.02000000000004z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1010'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='100%25' y1='50%25' x2='0%25' y2='50%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1011'%3e%3cstop stop-color='rgba(251%2c 176%2c 59%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(212%2c 20%2c 90%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+html {
+  background-image: url("./imgs/Trianglify-10s-1482px.svg");
   background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(105px);
   height: 100vh;
+background-size: cover;  
 }
+
+
+
+/* body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #2874a6;
+  outline: 1px solid slategrey;
+} */
+
+
+/* 
+.background {} */
 
 .font-bold {
   font-size: 3rem;
@@ -51,6 +69,8 @@ code {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .hideScroll {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+
+  scrollbar-width: none;
+ 
 }

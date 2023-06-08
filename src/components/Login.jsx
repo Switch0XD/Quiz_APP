@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex w-screen place-content-center items-center">
+    <div className="flex w-screen place-content-center items-center pt-40">
       <Cards className="w-auto h-auto">
         <div className="text-l text-center font-bold pb-4 text-slate-800">
           Log in

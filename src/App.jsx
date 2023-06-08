@@ -14,7 +14,7 @@ function App() {
     difficulty: "",
   });
   return (
-    <div className="background flex">
+    <div className="background">
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login />} />
