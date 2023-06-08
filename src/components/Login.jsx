@@ -67,7 +67,7 @@ const Login = () => {
             }}
           />
           {/* Signin option */}
-          <div className="flex place-content-center items-center pt-6">
+          <div className="flex place-content-center items-center pt-6 pb-2">
             <a
               href="/signup"
               className="font-medium text-center text-gray-500 hover:text-indigo-300"
