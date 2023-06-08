@@ -30,7 +30,7 @@ const Todos = () => {
   }
   return (
     <>
-      <div className="card">
+      <div className="card grid grid-cols-2 pt-20  ">
         {data.map((item) => (
           <div className="courses-container">
             <div className="course">
