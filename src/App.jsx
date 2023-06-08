@@ -14,21 +14,22 @@ function App() {
     difficulty: "",
   });
   return (
-    <div className="background flex">
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/profile" element={<Profile />} />
-          {/* <Route exact path="/quiz/:name" element={<Quiz />} /> */}
-          <Route
-            path="/quiz/:name"
-            element={<SetupQuiz setFilters={setFilters} />}
-          />
-          <Route path="/questions" element={<Question filters={filters} />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+
+
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/profile" element={<Profile />} />
+        {/* <Route exact path="/quiz/:name" element={<Quiz />} /> */}
+        <Route
+          path="/quiz/:name"
+          element={<SetupQuiz setFilters={setFilters} />}
+        />
+        <Route path="/questions" element={<Question filters={filters} />} />
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 

@@ -1,8 +1,23 @@
 .nav {
-  border: 3px solid #e6e6e6;
+  /* border: 3px solid #e6e6e6; */
 }
 
 .logo {
   width: 2.5rem;
   height: 2.5rem;
+  float: left;
+
+  aspect-ratio: 3/2;
+  object-fit: fill;
+  mix-blend-mode: screen;
+}
+
+
+/* img {
+  border-radius: 30%;
+
+} */
+
+.text-xl {
+  text-align: center;
 }
