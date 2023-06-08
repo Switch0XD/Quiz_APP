@@ -46,14 +46,15 @@ const NavBar = () => {
               <img src={logo} className='rounded-3xl' alt="logo" />
             </div>
             <div>
-              <p className="text-xl"><strong>Hello, {capitalizeFirstLetter(userDetails.name)}</strong></p>
+              <p className="username text-xl rounded-3xl"><strong>Hello, {capitalizeFirstLetter(userDetails.name)}</strong></p>
             </div>
             <div>
               <button
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="logout text-xl rounded-3xl"
                 onClick={logoutUser}
               >
-                Logout
+                <p><strong>Logout</strong></p>
+                
               </button>
             </div>
           </div>
