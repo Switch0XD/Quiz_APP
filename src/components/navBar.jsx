@@ -1,47 +1,52 @@
 import React, { useState, useEffect } from 'react'
-import {account} from '../appwrite/appwriteConfig'
+import { account } from '../appwrite/appwriteConfig'
 import { useNavigate, Link } from 'react-router-dom'
 import './navBar.css'
 import logo from '../logo.gif'
 const NavBar = () => {
-    const navigate = useNavigate()
-    const [userDetails,setUserDetails] = useState()
+  const navigate = useNavigate()
+  const [userDetails, setUserDetails] = useState()
 
-    useEffect(() => {
-      const getData = account.get()
-      getData.then(
-        function(response){
-          setUserDetails(response)
-        },
-        function(error){
-          console.log(error);
-        }
-      )
-    }, [])
+  useEffect(() => {
+    const getData = account.get()
+    getData.then(
+      function (response) {
+        setUserDetails(response)
+      },
+      function (error) {
+        console.log(error);
+      }
+    )
+  }, [])
 
-    //logout button
-    const logoutUser = async () => {
-        try{
-            await account.deleteSession('current') // current session is deleted now
-            navigate("/") // where we want to redriect
-        }
-        catch(error){
-          console.log(error);
-        }
+  //logout button
+  const logoutUser = async () => {
+    try {
+      await account.deleteSession('current') // current session is deleted now
+      navigate("/") // where we want to redriect
     }
+    catch (error) {
+      console.log(error);
+    }
+  }
 
-    
-    
+  // Capital letter
+  const capitalizeFirstLetter = (name) => {
+    return name[0].toUpperCase() + name.slice(1);
+  }
+
+
+
   return (
     <>
       {userDetails ? (
         <>
           <div className="nav min-h-min max-w-7xl mx-auto shadow-md flex justify-between text-right py-3 px-3 mt-2 rounded-lg">
             <div className='logo'>
-            <img src={logo} alt="logo"/>
+              <img src={logo} alt="logo" />
             </div>
             <div>
-              <p className="text-xl"><strong>Hello {userDetails.name}</strong></p>
+              <p className="text-xl"><strong>Hello, {capitalizeFirstLetter(userDetails.name)}</strong></p>
             </div>
             <div>
               <button

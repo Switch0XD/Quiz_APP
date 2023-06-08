@@ -1,39 +1,43 @@
-import React, {useState} from 'react'
-import {account} from '../appwrite/appwriteConfig'
+import React, { useState } from 'react'
+import { account } from '../appwrite/appwriteConfig'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
+
+function capitalizeFirstLetter(name) {
+  return name[0].toUpperCase() + name.slice(1);
+}
 const Signup = () => {
-    const navigate = useNavigate()
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        password: ''
-    })
+  const navigate = useNavigate()
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: ''
+  })
 
-    
-//signup
-    const signupUser = async (e) => {
-        e.preventDefault()
 
-        const promise = account.create(
-            uuidv4(),
-            user.email,
-            user.password,
-            user.name
-        )
+  //signup
+  const signupUser = async (e) => {
+    e.preventDefault()
 
-        promise.then(
-            function(response){
-                console.log(response);
-                navigate("/profile") // where we want to redriect
-            },
-            function(error){
-                console.log(error);
-            }
-        )
-    };
+    const promise = account.create(
+      uuidv4(),
+      user.email,
+      user.password,
+      user.name
+    )
 
-    
+    promise.then(
+      function (response) {
+        console.log(response);
+        navigate("/profile") // where we want to redriect
+      },
+      function (error) {
+        console.log(error);
+      }
+    )
+  };
+
+
   return (
     <>
       <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -57,10 +61,10 @@ const Signup = () => {
                     required
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     onChange={(e) => {
-                        setUser({
-                            ...user,
-                            name: e.target.value})
-
+                      setUser({
+                        ...user,
+                        name: capitalizeFirstLetter(e.target.value)
+                      })
                     }}
                   />
                 </div>
@@ -79,12 +83,13 @@ const Signup = () => {
                     type="email"
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     onChange={(e) => {
-                        setUser({
-                            ...user,
-                            email: e.target.value})
+                      setUser({
+                        ...user,
+                        email: e.target.value
+                      })
 
                     }}
-                    />
+                  />
                 </div>
               </div>
 
@@ -104,12 +109,13 @@ const Signup = () => {
                     required
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     onChange={(e) => {
-                        setUser({
-                            ...user,
-                            password: e.target.value})
+                      setUser({
+                        ...user,
+                        password: e.target.value
+                      })
 
                     }}
-                    
+
                   />
                 </div>
               </div>
@@ -201,7 +207,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-</>
+    </>
   )
 }
 
