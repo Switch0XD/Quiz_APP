@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
 body {
-	/* background-image: linear-gradient(45deg, #7175da, #9790F2); */
-	font-family: 'Muli', sans-serif;
-	/* display: flex;
+  /* background-image: linear-gradient(45deg, #7175da, #9790F2); */
+  font-family: 'Muli', sans-serif;
+  /* display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -16,132 +16,135 @@ body {
 	margin: 0; */
 }
 
-.card{
-	/* background-image: linear-gradient(45deg, #7175da, #9790F2); */
-	background-color: #cae0fe;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	flex-direction: row;
-	margin-top: 90px;
-	margin-bottom: 20px;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	/* height: 80vh; */
-	border-radius: 10%;
-	box-shadow: inset 0 0 3rem rgba(33, 146, 216, 0.5);
+.card {
+  /* background-image: linear-gradient(45deg, #7175da, #9790F2); */
+  background-color: #cae0fe;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 90px;
+  margin-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* height: 80vh; */
+  border-radius: 10%;
+  box-shadow: inset 0 0 3rem rgba(33, 146, 216, 0.5);
 }
+
 /* .courses-container{
 	
 
 } */
 .course {
-	background-color: #fff;
-	border-radius: 10px;
-	display: flex;
-	max-width: 100%;
-	margin: 20px;
-	overflow: hidden;
-	width: 700px;
-	border: 3px solid #e6e6e6;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  max-width: 100%;
+  margin: 20px;
+  overflow: hidden;
+  width: 700px;
+  border: 3px solid #e6e6e6;
 }
-.course:hover{
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
+.course:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .course h6 {
-	opacity: 0.6;
-	margin: 0;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .course h2 {
-	letter-spacing: 1px;
-	margin: 10px 0;
+  letter-spacing: 1px;
+  margin: 10px 0;
 }
 
 .course-preview {
-	background-color: #387ef7;
-	color: #fff;
-	padding: 30px;
-	max-width: 250px;
+  background-color: #387ef7;
+  color: #fff;
+  padding: 30px;
+  max-width: 250px;
 }
 
 .course-preview a {
-	color: #fff;
-	display: inline-block;
-	font-size: 12px;
-	opacity: 0.6;
-	margin-top: 30px;
-	text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 30px;
+  text-decoration: none;
 }
 
 .course-info {
-	padding: 30px;
-	position: relative;
-	width: 100%;
+  padding: 30px;
+  position: relative;
+  width: 100%;
 }
 
 .progress-container {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	text-align: right;
-	width: 150px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  text-align: right;
+  width: 150px;
 }
 
 .progress {
-	background-color: #ddd;
-	border-radius: 3px;
-	height: 5px;
-	width: 100%;
+  background-color: #ddd;
+  border-radius: 3px;
+  height: 5px;
+  width: 100%;
 }
 
 .progress::after {
-	border-radius: 3px;
-	background-color: #387ef7;
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 5px;
-	width: 66%;
+  border-radius: 3px;
+  background-color: #387ef7;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 66%;
 }
 
 .progress-text {
-	font-size: 10px;
-	opacity: 0.6;
-	letter-spacing: 1px;
+  font-size: 10px;
+  opacity: 0.6;
+  letter-spacing: 1px;
 }
 
 .btn {
-	background-color: #387ef7;
-	border: 0;
-	border-radius: 50px;
-	color: #fff;
-	font-size: 16px;
-	padding: 12px 25px;
-	position: absolute;
-	bottom: 30px;
-	right: 30px;
-	letter-spacing: 1px;
+  background-color: #387ef7;
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  letter-spacing: 1px;
 }
-.btn:hover{
-	background-color: whitesmoke;
-	color: black;
-	border: 3px solid #387ef7;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
+.btn:hover {
+  background-color: whitesmoke;
+  color: black;
+  border: 3px solid #387ef7;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 
 }
 
 @media screen and (max-width: 480px) {
 
-	.social-panel-container.visible {
-		transform: translateX(0px);
-	}
-	
-	.floating-btn {
-		right: 10px;
-	}
+  .social-panel-container.visible {
+    transform: translateX(0px);
+  }
+
+  .floating-btn {
+    right: 10px;
+  }
 }

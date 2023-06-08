@@ -41,16 +41,16 @@ const NavBar = () => {
     <>
       {userDetails ? (
         <>
-          <div className="nav min-h-min max-w-7xl mx-auto shadow-md flex justify-between text-right py-3 px-3 mt-2 rounded-lg">
+          <div className="nav min-h-min max-w-7xl mx-auto  flex justify-between text-right py-3 px-3 mt-2 ">
             <div className='logo'>
-              <img src={logo} alt="logo" />
+              <img src={logo} className='rounded-3xl' alt="logo" />
             </div>
             <div>
               <p className="text-xl"><strong>Hello, {capitalizeFirstLetter(userDetails.name)}</strong></p>
             </div>
             <div>
               <button
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 onClick={logoutUser}
               >
                 Logout
