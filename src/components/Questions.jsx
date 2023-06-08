@@ -50,7 +50,7 @@ const Question = ({ filters }) => {
   //   console.log(filters);
   // },[])
   return (
-    <div className="flex flex-col w-screen place-content-center items-center">
+    <div className="flex flex-col w-screen place-content-center items-center pt-40">
       <Card className="w-1/2 h-1/2 overflow-y-scroll hideScroll">
         <small className="text-right pt-4 pr-4 text-sm text-green-500 bold">
           {`Correct answers: ${counter}/${filters.noOfQuestions}`}
