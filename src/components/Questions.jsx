@@ -10,6 +10,8 @@ const Question = ({ filters }) => {
   const [questions, setQuestions] = useState();
   const [counter, setCounter] = useState(0);
   const [isloading, setIsLoading] = useState(false);
+  const [correctAnswers, setCorrectAnswers] = useState({});
+  const [progress, setProgress] = useState(0);
   var i = 0;
   useEffect(() => {
     setIsLoading(true);
@@ -30,7 +32,7 @@ const Question = ({ filters }) => {
 
   useEffect(() => {
     if (questions) {
-      console.log("1 : ", questions);
+      // console.log("1 : ", questions);
       setCurrentQuestion(questions[i]);
 
       console.log("2: ", currentQuestion);
@@ -38,22 +40,16 @@ const Question = ({ filters }) => {
   }, [questions]);
 
   useEffect(() => {
+    setCorrectAnswers(currentQuestion.correct_answers);
+    console.log("3: ", correctAnswers);
+  }, [currentQuestion]);
+
+  useEffect(() => {
     setCurrentAnswer(currentQuestion.answers);
-    console.log("3: ", currentAnswer);
-    Object.values(currentAnswer)?.map((answer) => {
-      if (answer != null) {
-        console.log(answer);
-      } else {
-        console.log("rittik");
-      }
-    });
-    console.log("4: ", Object.values(currentAnswer));
-    console.log("5: ", Object.keys(currentAnswer));
   }, [currentQuestion]);
 
   const changeQuestion = () => {
-    console.log("hello");
-    if (counter < questions.length || counter < filters.noOfQuestions) {
+    if (counter < filters.noOfQuestions) {
       setCounter(counter + 1);
       setCurrentQuestion(questions[counter]);
       // if(counter < questions.length){
@@ -64,9 +60,28 @@ const Question = ({ filters }) => {
     }
   };
 
-  // const checkAnswer = () => {
 
-  // }
+  const checkAnswer = (e) => {
+    const string = `${e.target.value}_correct`;
+    const originalStyle = e.target.style;
+    if (correctAnswers[string] === "true") {
+      e.target.style= "background-color: #28DF99;"
+      setTimeout(() => {
+        e.target.style = originalStyle;
+        changeQuestion();
+        setProgress(progress + 1);
+      }, 1000);
+      
+    }
+    else{
+      e.target.style= "background-color: #F45050;"
+    }
+    setTimeout(() => {
+      e.target.style = originalStyle;
+      changeQuestion();
+    }, 1000);
+
+  }
 
   // useEffect(() => {
   //   console.log(filters);
@@ -85,27 +100,27 @@ const Question = ({ filters }) => {
   }
   return (
     <div className="flex flex-col w-screen h-screen place-content-center items-center">
-      <Card className="w-1/2 h-1/2 overflow-y-scroll hideScroll">
+      <Card className="w-1/2 h-1/2 ">
         <small className="text-right pt-4 pr-4 text-sm text-green-500 bold">
-          {`Correct answers: ${counter}/${filters.noOfQuestions}`}
+          {`Correct answers: ${progress}/${filters.noOfQuestions}`}
         </small>
         <h1 className="text-4xl bold pl-6 pb-4 text-slate-800 text-center pt-8 pr-2 pl-2 pb-2">
           {currentQuestion.question}
         </h1>
-        <section className="flex flex-col place-content-center items-center pb-8 pt-2">
+        <section className="flex flex-col place-content-center items-center pb-8 pt-2 overflow-y-scroll hideScroll">
           {currentAnswer &&
             Object.values(currentAnswer).map((answer) => {
               if (answer != null) {
-                console.log(answer);
                 return (
                   <div className="pb-2">
-                    <option
+                    <button
                       className="w-96 h-auto truncate text-clip text-center bg-gray-400 hover:bg-gray-500 
                       pt-1 pb-1 pl-2 pr-2 btn-txt rounded-3xl"
-                      value={answer}
+                      value={Object.keys(currentAnswer).find(key => currentAnswer[key] === answer)}
+                      onClick={checkAnswer}
                     >
                       {answer}
-                    </option>
+                    </button>
                   </div>
                 );
               }
