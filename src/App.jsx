@@ -3,7 +3,7 @@ import Login from "./components/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
-import Quiz from "./components/Quiz";
+// import Quiz from "./components/Quiz";
 import Question from "./components/Questions";
 import SetupQuiz from "./components/SetupQuiz";
 
