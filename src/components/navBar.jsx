@@ -1,64 +1,56 @@
-import React, { useState, useEffect } from 'react'
-import { account } from '../appwrite/appwriteConfig'
-import { useNavigate, Link } from 'react-router-dom'
-import './navBar.css'
-import logo from '../logo.gif'
+import React, { useState, useEffect } from "react";
+import { account } from "../appwrite/appwriteConfig";
+import { useNavigate, Link } from "react-router-dom";
+import logo from "../logo.gif";
 const NavBar = () => {
-  const navigate = useNavigate()
-  const [userDetails, setUserDetails] = useState()
+  const navigate = useNavigate();
+  const [userDetails, setUserDetails] = useState();
 
   useEffect(() => {
-    const getData = account.get()
+    const getData = account.get();
     getData.then(
       function (response) {
-        setUserDetails(response)
+        setUserDetails(response);
       },
       function (error) {
         console.log(error);
       }
-    )
-  }, [])
+    );
+  }, []);
 
   //logout button
   const logoutUser = async () => {
     try {
-      await account.deleteSession('current') // current session is deleted now
-      navigate("/") // where we want to redriect
-    }
-    catch (error) {
+      await account.deleteSession("current"); // current session is deleted now
+      navigate("/"); // where we want to redriect
+    } catch (error) {
       console.log(error);
     }
-  }
-
-  // Capital letter
-  const capitalizeFirstLetter = (name) => {
-    return name[0].toUpperCase() + name.slice(1);
-  }
-
-
+  };
 
   return (
     <>
       {userDetails ? (
-        <>
-          <div className="nav min-h-min max-w-7xl mx-auto  flex justify-between text-right py-3 px-3 mt-2 ">
-            <div className='logo'>
-              <img src={logo} className='rounded-3xl' alt="logo" />
+        <div>
+          <div className="nav min-h-min max-w-7xl mx-auto flex justify-between text-center py-4 px-4">
+            <div className="w-[3.5rem]">
+              <img src={logo} alt="logo" className="rounded-full" />
             </div>
-            <div>
-              <p className="username text-xl rounded-3xl"><strong>Hello, {capitalizeFirstLetter(userDetails.name)}</strong></p>
+            <div className="flex justify-between text-center place-content-center w-auto h-12 bg-orange-500 px-4 rounded-3xl border-4">
+              <p className="text-3xl text-white bold">
+                Hello, {userDetails.name}
+              </p>
             </div>
             <div>
               <button
-                className="logout text-xl rounded-3xl"
+                className="w-20 bg-gray-400 text-white rounded-3xl p-1 btn-txt hover:bg-slate-800 hover:drop-shadow-md ease-in-out duration-300"
                 onClick={logoutUser}
               >
-                <p><strong>Logout</strong></p>
-                
+                Logout
               </button>
             </div>
           </div>
-        </>
+        </div>
       ) : (
         <p className="mt-4">
           Please Login To see Profile{" "}
@@ -70,8 +62,7 @@ const NavBar = () => {
         </p>
       )}
     </>
+  );
+};
 
-  )
-}
-
-export default NavBar
+export default NavBar;
