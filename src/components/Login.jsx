@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { account } from "../appwrite/appwriteConfig";
 import { useNavigate } from "react-router-dom";
 import Cards from "./Ui/Cards";
-import { BsFacebook } from "react-icons/bs";
+import { BsFacebook, BsGoogle } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 const Login = () => {
@@ -23,6 +23,26 @@ const Login = () => {
     }
   };
 
+  const googleAuth = (e) => {
+    e.preventDefault();
+    try {
+      account.createOAuth2Session('google', 'http://localhost:3000/profile', 'http://localhost:3000');
+      // navigate("/profile");
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+  const githubAuth = (e) => {
+    e.preventDefault();
+    try {
+      account.createOAuth2Session('github', 'http://localhost:3000/profile', 'http://localhost:3000');
+      // navigate("/profile");
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="flex w-screen place-content-center items-center pt-40">
       <Cards className="w-auto h-auto">
@@ -105,7 +125,7 @@ const Login = () => {
                 href="/"
                 className="w-full inline-flex justify-center py-2 px-4 text-3xl font-medium text-slate-800 hover:bg-gray-50"
               >
-                <BsFacebook />
+                <BsGoogle onClick={(e)=> googleAuth(e)} />
               </a>
             </div>
 
@@ -123,7 +143,7 @@ const Login = () => {
                 href="/"
                 className="w-full inline-flex justify-center py-2 px-4 text-3xl font-medium text-slate-800 hover:bg-gray-50"
               >
-                <BsGithub />
+                <BsGithub onClick={(e)=> githubAuth(e)} />
               </a>
             </div>
           </div>
