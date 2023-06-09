@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "./Ui/Cards";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { getQuestionsData } from "../Api/index";
@@ -10,6 +11,7 @@ const Question = ({ filters }) => {
   const [questions, setQuestions] = useState();
   const [counter, setCounter] = useState(0);
   const [isloading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   var i = 0;
   useEffect(() => {
     setIsLoading(true);
@@ -71,6 +73,7 @@ const Question = ({ filters }) => {
   // useEffect(() => {
   //   console.log(filters);
   // },[])
+
   if (isloading) {
     return (
       <div className="flex flex-col w-screen h-screen place-content-center items-center">
