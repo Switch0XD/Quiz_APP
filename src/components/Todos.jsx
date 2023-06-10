@@ -1,25 +1,36 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "./Ui/Cards";
-import { BsArrowRightCircleFill } from "react-icons/bs";
+import Cloud from "../imgs/cloud-svgrepo-com.svg";
+import Code from "../imgs/code-1115-svgrepo-com.svg";
+import Linux from "../imgs/linux-svgrepo-com.svg";
+import Sql from "../imgs/sql-file-symbol-svgrepo-com.svg";
+import Docker from "../imgs/docker-svgrepo-com.svg";
+import Cms from "../imgs/cms-svgrepo-com.svg";
 const data = [
   {
     name: "DevOps",
+    image: Cloud,
   },
   {
     name: "Code",
+    image: Code,
   },
   {
     name: "Linux",
+    image: Linux,
   },
   {
     name: "SQL",
+    image: Sql,
   },
   {
     name: "Docker",
+    image: Docker,
   },
   {
     name: "CMS",
+    image: Cms,
   },
 ];
 const Todos = () => {
@@ -33,8 +44,13 @@ const Todos = () => {
       <div className="grid grid-cols-2 pt-20 gap-4">
         {data.map((item) => (
           <div className="flex place-content-center items-center">
-            <Card className="w-9/12 h-48 m-4 hover:scale-110 ease-in-out duration-300">
-              <h1 className="text-6xl bold text-slate-800 pl-4 pt-4">
+            <Card className="w-9/12 h-48 m-4 hover:scale-110 ease-in-out duration-300 overflow-hidden">
+              <img
+                src={item.image}
+                alt=""
+                className="absolute w-96 right-0 opacity-30 top-[-30px]"
+              />
+              <h1 className="text-5xl bold text-slate-800 pl-4 pt-4">
                 {item.name}
               </h1>
 
