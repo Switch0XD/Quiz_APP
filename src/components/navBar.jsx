@@ -19,6 +19,11 @@ const NavBar = () => {
     );
   }, []);
 
+  // Capital letter
+  const capitalizeFirstLetter = (name) => {
+    return name[0].toUpperCase() + name.slice(1);
+  }
+
   //logout button
   const logoutUser = async () => {
     try {
@@ -28,6 +33,7 @@ const NavBar = () => {
       console.log(error);
     }
   };
+
 
   return (
     <>
@@ -41,7 +47,7 @@ const NavBar = () => {
               <h1 className="text-[1.5rem] bold text-gray-100 flex  place-content-center items-center">
                 Hello <br className="block md:hidden" />
                 <span className="inline-flex overflow-x-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform">
-                  , {userDetails.name} 👋
+                  , {capitalizeFirstLetter(userDetails.name)} 👋
                 </span>
                 <span className="box-border inline-block w-1 h- bg-white animate-cursor will-change-transform"></span>
               </h1>
