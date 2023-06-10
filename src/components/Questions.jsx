@@ -63,8 +63,9 @@ const Question = ({ filters }) => {
     }
   };
 
-  const checkAnswer = (e) => {
-    const string = `${e.target.value}_correct`;
+  const checkAnswer = (value, e) => {
+    console.log(value);
+    const string = `${value}_correct`;
     const originalStyle = e.target.style;
     if (correctAnswers[string] === "true") {
       e.target.style = "background-color: rgb(34 197 94);";
@@ -111,13 +112,17 @@ const Question = ({ filters }) => {
                 return (
                   <div className="pb-2">
                     <p
-                      key={Math.random()}
                       className="w-96 h-auto break-normal text-center text-white bg-gray-400 hover:bg-gray-500 
                       pt-1 pb-1 pl-2 pr-2 btn-txt rounded-3xl break-all"
-                      value={Object.keys(currentAnswer).find(
-                        (key) => currentAnswer[key] === answer
-                      )}
-                      onClick={checkAnswer}
+                      key={Math.random()}
+                      onClick={(e) =>
+                        checkAnswer(
+                          Object.keys(currentAnswer).find(
+                            (key) => currentAnswer[key] === answer
+                          ),
+                          e
+                        )
+                      }
                     >
                       {answer}
                     </p>
