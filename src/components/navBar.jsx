@@ -22,7 +22,7 @@ const NavBar = () => {
   // Capital letter
   const capitalizeFirstLetter = (name) => {
     return name[0].toUpperCase() + name.slice(1);
-  }
+  };
 
   //logout button
   const logoutUser = async () => {
@@ -34,10 +34,9 @@ const NavBar = () => {
     }
   };
 
-
   return (
     <>
-      {userDetails ? (
+      {userDetails && (
         <div>
           <div className="nav min-h-min max-w-7xl mx-auto flex justify-between text-center py-4 px-4">
             <div className="w-[3.5rem]">
@@ -55,7 +54,7 @@ const NavBar = () => {
             <div className="flex items-center place-content-center">
               <button
                 onClick={logoutUser}
-                class="relative inline-flex items-center justify-center px-4 py-2 overflow-hidden btn-txt text-slate-800 transition duration-300 ease-out border-2 border-slate-800 rounded-full shadow-md group"
+                class="relative inline-flex items-center justify-center px-2 py-1 overflow-hidden btn-txt text-slate-800 transition duration-300 ease-out border-2 border-slate-800 rounded-full shadow-md group"
               >
                 <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white text-2xl duration-300 -translate-x-full bg-slate-800 group-hover:translate-x-0 ease">
                   <AiOutlineLogout />
@@ -68,15 +67,6 @@ const NavBar = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <p className="mt-4">
-          Please Login To see Profile{" "}
-          <Link to="/">
-            <span className="bg-blue-300 p-2 cursor-pointer text-white rounded-md">
-              Login
-            </span>
-          </Link>
-        </p>
       )}
     </>
   );

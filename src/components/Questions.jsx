@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import Card from "./Ui/Cards";
 import { useNavigate } from "react-router-dom";
@@ -100,11 +98,11 @@ const Question = ({ filters }) => {
 
   return (
     <div className="flex flex-col w-screen h-screen place-content-center items-center">
-      <Card className="w-1/2 h-1/2 overflow-y-scroll hideScroll">
+      <Card className="lg:w-1/2 md:w-3/5 h-1/2 overflow-y-scroll hideScroll">
         <small className="text-right pt-4 pr-4 text-sm text-green-500 bold">
           {`Correct answers: ${progress}/${filters.noOfQuestions}`}
         </small>
-        <h1 className="text-4xl bold pl-6 text-slate-800 text-center pt-8 pr-2">
+        <h1 className="lg:text-4xl md:text-2xl bold pl-6 text-slate-800 text-center pt-8 pr-2">
           {currentQuestion.question}
         </h1>
         <section className="flex flex-col place-content-center items-center pb-8 pt-8">
@@ -114,8 +112,8 @@ const Question = ({ filters }) => {
                 return (
                   <div className="pb-2">
                     <p
-                      className="w-96 h-auto break-normal text-center text-white bg-gray-400 hover:bg-gray-500 
-                      pt-1 pb-1 pl-2 pr-2 btn-txt rounded-3xl break-all"
+                      className="lg:w-96  md:w-72 h-auto break-normal text-center text-white bg-gray-400 hover:bg-gray-500 
+                      pt-1 pb-1 pl-2 pr-2 bold lg:text-xl md:text-base rounded-3xl break-all"
                       key={Math.random()}
                       onClick={(e) =>
                         checkAnswer(
@@ -148,10 +146,10 @@ const Question = ({ filters }) => {
       {modalVisibility && (
         <div className="flex absolute w-screen h-screen place-content-center items-center">
           <Card className="flex absolute place-content-center items-center w-5/12 h-5/12 z-10">
-            <h1 className="text-6xl bold pl-6 pb-4 text-slate-800 text-center pt-8 pr-2 pl-2 pb-2">
+            <h1 className="lg:text-6xl md:text-3xl bold pl-6 pb-4 text-slate-800 text-center pt-8 pr-2 pl-2 pb-2">
               Congrats!
             </h1>
-            <p className="text-center text-xl">{`You answered ${progress}/${filters.noOfQuestions} questions correctly`}</p>
+            <p className="text-center lg:text-xl md:text-sm">{`You answered ${progress}/${filters.noOfQuestions} questions correctly`}</p>
             <div className="py-4">
               <button
                 onClick={() => navigate("/profile")}
