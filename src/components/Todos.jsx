@@ -56,7 +56,7 @@ const Todos = () => {
 
               <div className="flex place-content-end items-end mr-4 mt-12">
                 <button
-                  onClick={startQuiz}
+                  onClick={() => startQuiz(item.name)}
                   class="relative inline-flex items-center px-12 py-1 overflow-hidden btn-txt text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50"
                 >
                   <span class="absolute left-0 block w-full h-0 transition-all bg-orange-500 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
