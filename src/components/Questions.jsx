@@ -113,7 +113,7 @@ const Question = ({ filters }) => {
                   <div className="pb-2">
                     <p
                       className="lg:w-96  md:w-72 h-auto break-normal text-center text-white bg-gray-400 hover:bg-gray-500 
-                      pt-1 pb-1 pl-2 pr-2 btn-txt rounded-3xl break-all"
+                      pt-1 pb-1 pl-2 pr-2 bold lg:text-xl md:text-base rounded-3xl break-all"
                       key={Math.random()}
                       onClick={(e) =>
                         checkAnswer(

@@ -96,9 +96,3 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
   }
 }
-
-@media only screen and (min-width: 768px) {
-  .btn-txt {
-    font-size: 1rem;
-  }
-}
