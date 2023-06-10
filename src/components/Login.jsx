@@ -11,18 +11,28 @@ const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
+    wrongPassword: false,
+
   });
 
-  //login
+
   const loginUser = async (e) => {
     e.preventDefault();
     try {
       await account.createEmailSession(user.email, user.password);
       navigate("/profile"); // where we want to redriect
     } catch (error) {
-      console.log(error);
+      if (error.code === 401) {
+        setUser({
+          ...user,
+          wrongPassword: true,
+        });
+      } else {
+        console.log(error);
+      }
     }
   };
+
 
   const googleAuth = (e) => {
     e.preventDefault();
@@ -93,6 +103,13 @@ const Login = () => {
               });
             }}
           />
+          <center>
+            <span
+              className="text-red-500 text-sm pt-2 "
+              style={user.wrongPassword ? { display: "block" } : { display: "none" }}
+            >
+              Wrong password
+            </span>  </center>
           {/* Signin option */}
           <div className="flex place-content-center items-center pt-6 pb-2">
             <a
