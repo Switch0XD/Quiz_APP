@@ -1,100 +1,29 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  media: false, // or 'media' or 'class'
   theme: {
     extend: {
-      margin: {
-        320: "320px",
-      },
-      width: {
-        190: "190px",
-        275: "275px",
-        300: "300px",
-        340: "340px",
-        350: "350px",
-        656: "656px",
-        880: "880px",
-        508: "508px",
-      },
-      height: {
-        80: "80px",
-        340: "340px",
-        370: "370px",
-        420: "420px",
-        510: "510px",
-        600: "600px",
-        685: "685px",
-        800: "800px",
-        "90vh": "90vh",
-      },
-      flex: {
-        0.7: "0.7 1 0%",
-      },
-      maxHeight: {
-        370: "370px",
-      },
-      minWidth: {
-        210: "210px",
-        350: "350px",
-        620: "620px",
-      },
-      textColor: {
-        lightGray: "#F1EFEE",
-        primary: "#FAFAFA",
-        secColor: "#efefef",
-        navColor: "#BEBEBE",
-      },
-      backgroundColor: {
-        mainColor: "#FBF8F9",
-        secondaryColor: "#F0F0F0",
-        blackOverlay: "rgba(0, 0 ,0 ,0.7)",
-      },
-      dropShadow: {
-        "3xl": "0 25px 25px rgba(0, 0, 0, 0.50)",
-      },
-      transitionDuration: {
-        2000: "2000ms",
+      animation: {
+        cursor: "cursor .6s linear infinite alternate",
+        // type: "type 1.8s ease-out .8s infinite alternate both",
+        type: "type 1.8s ease-out .8s 1 normal both",
+        "type-reverse": "type 1.8s ease-out 0s infinite alternate-reverse both",
       },
       keyframes: {
-        "slide-in": {
-          "0%": {
-            "-webkit-transform": "translateX(-200px)",
-            transform: "translateX(-200px)",
-          },
-          "100%": {
-            "-webkit-transform": "translateX(0px)",
-            transform: "translateX(0px)",
-          },
-        },
-
-        "slide-fwd": {
-          "0%": {
-            "-webkit-transform": "translateZ(0px)",
-            transform: "translateZ(0px)",
-          },
-          "100%": {
-            "-webkit-transform": "translateZ(160px)",
-            transform: "translateZ(160px)",
-          },
+        type: {
+          "0%": { width: "0ch" },
+          "5%, 10%": { width: "1ch" },
+          "15%, 20%": { width: "2ch" },
+          "25%, 30%": { width: "3ch" },
+          "35%, 40%": { width: "4ch" },
+          "45%, 50%": { width: "5ch" },
+          "55%, 60%": { width: "6ch" },
+          "65%, 70%": { width: "7ch" },
+          "75%, 80%": { width: "8ch" },
+          "85%, 90%": { width: "9ch" },
+          "95%": { width: "10ch" },
         },
       },
-      animation: {
-        "slide-in": "slide-in 0.5s ease-out",
-        "slide-fwd":
-          " slide-fwd 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
-      },
-      transitionProperty: {
-        height: "height",
-      },
     },
-    cursor: {
-      "zoom-in": "zoom-in",
-      pointer: "pointer",
-    },
-  },
-  variants: {
-    // backgroundColor: ['active'],
-    extend: {},
   },
   plugins: [],
 };
