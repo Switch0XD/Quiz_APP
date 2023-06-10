@@ -41,10 +41,10 @@ const Todos = () => {
   };
   return (
     <>
-      <div className="grid lg:grid-cols-2 md:grid-cols-1 pt-20 gap-4">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 pt-10 gap-4">
         {data.map((item) => (
           <div className="flex place-content-center items-center">
-            <Card className="w-9/12 md:w-3/5 h-48 m-4 hover:scale-110 ease-in-out duration-300 overflow-hidden">
+            <Card className="w-9/12 md:w-4/5 h-48 m-4 hover:scale-110 ease-in-out duration-300 overflow-hidden">
               <img
                 src={item.image}
                 alt=""
