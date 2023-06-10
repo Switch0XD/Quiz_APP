@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { account } from "../appwrite/appwriteConfig";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../logo.gif";
+import { AiOutlineLogout } from "react-icons/ai";
 const NavBar = () => {
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState();
@@ -36,17 +37,27 @@ const NavBar = () => {
             <div className="w-[3.5rem]">
               <img src={logo} alt="logo" className="rounded-full" />
             </div>
-            <div className="flex justify-between text-center place-content-center w-auto h-12 bg-orange-500 px-4 rounded-3xl border-4">
-              <p className="text-3xl text-white bold">
-                Hello, {userDetails.name}
-              </p>
+            <div className="flex justify-between text-center place-content-center w-auto h-18 bg-orange-500 px-4 rounded-3xl border-4">
+              <h1 className="text-3xl bold text-gray-100 flex  place-content-center items-center">
+                Hello, <br className="block md:hidden" />
+                <span className="inline-flex overflow-x-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform">
+                  {userDetails.name} 👋
+                </span>
+                <span className="box-border inline-block my-2 w-1 h-12 bg-white animate-cursor will-change-transform"></span>
+              </h1>
             </div>
             <div>
               <button
-                className="w-20 bg-gray-400 text-white rounded-3xl p-1 btn-txt hover:bg-slate-800 hover:drop-shadow-md ease-in-out duration-300"
                 onClick={logoutUser}
+                class="relative inline-flex items-center justify-center px-4 py-2 overflow-hidden btn-txt text-slate-800 transition duration-300 ease-out border-2 border-slate-800 rounded-full shadow-md group"
               >
-                Logout
+                <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white text-2xl duration-300 -translate-x-full bg-slate-800 group-hover:translate-x-0 ease">
+                  <AiOutlineLogout />
+                </span>
+                <span class="absolute flex items-center justify-center w-full h-full text-slate-800 transition-all duration-300 transform group-hover:translate-x-full ease">
+                  Logout
+                </span>
+                <span class="relative invisible">Button Text</span>
               </button>
             </div>
           </div>

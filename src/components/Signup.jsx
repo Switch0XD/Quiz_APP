@@ -6,6 +6,7 @@ import Cards from "./Ui/Cards";
 import { BsFacebook } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 const Signup = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -100,20 +101,25 @@ const Signup = () => {
           {/* Signin option */}
           <div className="flex place-content-center items-center pt-6 pb-2">
             <a
-              href="/signup"
+              href="/"
               className="font-medium text-center text-gray-500 hover:text-indigo-300"
             >
-              Don't have Account, Sign Up
+              Have an account, Login
             </a>
           </div>
           {/* Button */}
           <div>
             <button
-              type="submit"
-              className="w-96 bg-gray-400 text-white rounded-3xl p-1 btn-txt hover:bg-slate-800 hover:drop-shadow-md ease-in-out duration-300"
               onClick={signupUser}
+              class="relative inline-flex items-center justify-center w-96 h-auto px-4 py-1 overflow-hidden btn-txt text-slate-800 transition duration-300 ease-out border-2 border-slate-800 rounded-full shadow-md group"
             >
-              Log in
+              <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white text-2xl duration-300 -translate-x-full bg-slate-800 group-hover:translate-x-0 ease">
+                <AiOutlinePlusCircle />
+              </span>
+              <span class="absolute flex items-center justify-center w-full h-full text-slate-800 transition-all duration-300 transform group-hover:translate-x-full ease">
+                Sign in
+              </span>
+              <span class="relative invisible">Button Text</span>
             </button>
           </div>
         </form>

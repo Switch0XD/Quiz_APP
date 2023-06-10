@@ -14,7 +14,7 @@ function App() {
     difficulty: "",
   });
   return (
-    <div className="background">
+    <div className="background overflow-y-scroll hideScroll">
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login />} />
