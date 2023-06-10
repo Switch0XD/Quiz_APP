@@ -37,16 +37,16 @@ const NavBar = () => {
             <div className="w-[3.5rem]">
               <img src={logo} alt="logo" className="rounded-full" />
             </div>
-            <div className="flex justify-between text-center place-content-center w-auto h-18 bg-orange-500 px-4 rounded-3xl border-4">
-              <h1 className="text-3xl bold text-gray-100 flex  place-content-center items-center">
-                Hello, <br className="block md:hidden" />
+            <div className="flex justify-between text-center place-content-center w-auto bg-orange-500 px-4 rounded-full border-4">
+              <h1 className="text-[1.5rem] bold text-gray-100 flex  place-content-center items-center">
+                Hello <br className="block md:hidden" />
                 <span className="inline-flex overflow-x-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform">
-                  {userDetails.name} 👋
+                  , {userDetails.name} 👋
                 </span>
-                <span className="box-border inline-block my-2 w-1 h-12 bg-white animate-cursor will-change-transform"></span>
+                <span className="box-border inline-block w-1 h- bg-white animate-cursor will-change-transform"></span>
               </h1>
             </div>
-            <div>
+            <div className="flex items-center place-content-center">
               <button
                 onClick={logoutUser}
                 class="relative inline-flex items-center justify-center px-4 py-2 overflow-hidden btn-txt text-slate-800 transition duration-300 ease-out border-2 border-slate-800 rounded-full shadow-md group"
