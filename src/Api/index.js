@@ -9,7 +9,8 @@ export const getQuestionsData = async (noOfQuestions , category , difficulty) =>
       apiKey: 'IAH1LGgyYhWKA2HizVnK2G2hT3ltrg1WhJxZLf5X',
       category: category,
       difficulty: difficulty,
-      limit: noOfQuestions
+      limit: noOfQuestions,
+      mode:'no-cors'
     },
     headers: {
       'X-RapidAPI-Key': '9092f147c0mshdfc0e555bcd8629p115359jsnac75da5b2776',
