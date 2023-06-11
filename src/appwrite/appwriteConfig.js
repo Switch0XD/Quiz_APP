@@ -1,6 +1,12 @@
 import {Client, Account, Databases} from 'appwrite'
+const cors = require('cors');
 
 const client = new Client(); // set your end-pionts 
+
+
+client.use(cors({
+    origin: "https://cloud.appwrite.io/v1"
+}));
 
 client.setEndpoint("https://cloud.appwrite.io/v1").setProject("647332cb9306f58de4a4")
 
