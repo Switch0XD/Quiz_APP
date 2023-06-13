@@ -77,7 +77,7 @@ const Signup = () => {
             onChange={(e) => {
               setUser({
                 ...user,
-                name: e.target.value,
+                email: e.target.value,
               });
             }}
           />
