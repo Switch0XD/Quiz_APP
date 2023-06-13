@@ -30,7 +30,7 @@ const Signup = () => {
     promise.then(
       function (response) {
         console.log(response);
-        navigate("/profile"); // where we want to redriect
+        navigate("/"); // where we want to redriect
       },
       function (error) {
         console.log(error);
