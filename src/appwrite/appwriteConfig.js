@@ -16,12 +16,12 @@
 
 import { Client, Account, Databases } from 'appwrite';
 
-const client = new Client(); // Create a new Appwrite client
+const client = new Client();
 
 client
-  .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject("64732c877001fa8c3d11"); // Set the Appwrite API endpoint, request options, and project ID
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('6488715ad75872c5520e'); // Set the Appwrite API endpoint, request options, and project ID
 
 export const account = new Account(client); // Create an instance of the Account class using the client
 
-export const databases = new Databases(client, "64732d270cb87ea0eeb7"); // Create an instance of the Databases class using the client and database ID
+export const databases = new Databases(client, "648871c5609ba7de7263"); // Create an instance of the Databases class using the client and database ID
