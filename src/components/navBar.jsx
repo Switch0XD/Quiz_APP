@@ -42,7 +42,7 @@ const NavBar = () => {
             <div className="w-[3.5rem]">
               <img src={logo} alt="logo" className="rounded-full" />
             </div>
-            <div className=" absolute sm:relative flex mt-20 left-nav sm:left-0 sm:m-0 z-[-1] justify-between text-center place-content-center w-56 sm:w-auto bg-orange-500 px-4 rounded-full border-4">
+            <div className="hidden sm:flex z-[-1] justify-between text-center place-content-center w-56 sm:w-auto bg-orange-500 px-4 rounded-full border-4">
               <h1 className="text-lg sm:text-[1.5rem] bold text-gray-100 flex  place-content-center items-center">
                 Hello <br className="block md:hidden" />
                 <span className="inline-flex overflow-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform">
@@ -64,6 +64,17 @@ const NavBar = () => {
                 </span>
                 <span class="relative invisible">Button Text</span>
               </button>
+            </div>
+          </div>
+          <div className="flex sm:hidden text-center justify-center place-content-center items-center">
+            <div className="w-56 sm:w-auto bg-orange-500 px-4 rounded-full border-2">
+              <h1 className="text-lg sm:text-[1.5rem] bold text-gray-100 flex  place-content-center items-center">
+                Hello <br className="block md:hidden" />
+                <span className="inline-flex overflow-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform">
+                  , {capitalizeFirstLetter(userDetails.name)}👋
+                </span>
+                <span className="box-border inline-block w-[2px] h-6 bg-white animate-cursor will-change-transform"></span>
+              </h1>
             </div>
           </div>
         </div>
