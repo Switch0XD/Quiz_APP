@@ -12,9 +12,7 @@ const Login = () => {
     email: "",
     password: "",
     wrongPassword: false,
-
   });
-
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -32,7 +30,6 @@ const Login = () => {
       }
     }
   };
-
 
   const googleAuth = (e) => {
     e.preventDefault();
@@ -62,7 +59,7 @@ const Login = () => {
   };
   return (
     <div className="flex h-screen w-screen place-content-center items-center">
-      <Cards className="w-auto h-auto">
+      <Cards className="w-72 sm:w-auto h-auto">
         <div className="text-l text-center font-bold pb-4 text-slate-800">
           Log in
         </div>
@@ -77,7 +74,7 @@ const Login = () => {
             type="email"
             autoComplete="email"
             required
-            className="border-2 border-slate-800 w-96 rounded-2xl pt-1 pb-1 pr-2 pl-2"
+            className="border-2 border-slate-800 w-60 sm:w-96 rounded-2xl pt-1 pb-1 pr-2 pl-2"
             onChange={(e) => {
               setUser({
                 ...user,
@@ -95,7 +92,7 @@ const Login = () => {
             type="password"
             autoComplete="current-password"
             required
-            className="border-2 border-slate-800 w-96 rounded-2xl pt-1 pb-1 pr-2 pl-2"
+            className="border-2 border-slate-800 w-60 sm:w-96 rounded-2xl pt-1 pb-1 pr-2 pl-2"
             onChange={(e) => {
               setUser({
                 ...user,
@@ -106,10 +103,13 @@ const Login = () => {
           <center>
             <span
               className="text-red-500 text-sm pt-2 "
-              style={user.wrongPassword ? { display: "block" } : { display: "none" }}
+              style={
+                user.wrongPassword ? { display: "block" } : { display: "none" }
+              }
             >
               Wrong password
-            </span>  </center>
+            </span>{" "}
+          </center>
           {/* Signin option */}
           <div className="flex place-content-center items-center pt-6 pb-2">
             <a
@@ -123,15 +123,15 @@ const Login = () => {
           <div>
             <button
               onClick={loginUser}
-              class="relative inline-flex items-center justify-center w-96 h-auto px-4 py-1 overflow-hidden btn-txt text-slate-800 transition duration-300 ease-out border-2 border-slate-800 rounded-full shadow-md group"
+              className="relative inline-flex items-center justify-center w-60 sm:w-96 h-auto px-4 py-1 overflow-hidden text-lg sm:text-[1.2rem] bold text-slate-800 transition duration-300 ease-out border-2 border-slate-800 rounded-full shadow-md group"
             >
-              <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white text-2xl duration-300 -translate-x-full bg-slate-800 group-hover:translate-x-0 ease">
+              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white text-2xl duration-300 -translate-x-full bg-slate-800 group-hover:translate-x-0 ease">
                 <AiOutlineLogin />
               </span>
-              <span class="absolute flex items-center justify-center w-full h-full text-slate-800 transition-all duration-300 transform group-hover:translate-x-full ease">
+              <span className="absolute flex items-center justify-center w-full h-full text-slate-800 transition-all duration-300 transform group-hover:translate-x-full ease">
                 Login
               </span>
-              <span class="relative invisible">Button Text</span>
+              <span className="relative invisible">Button Text</span>
             </button>
           </div>
         </form>

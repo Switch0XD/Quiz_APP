@@ -23,6 +23,9 @@ module.exports = {
           "95%": { width: "10ch" },
         },
       },
+      spacing: {
+        nav: "15%",
+      },
     },
   },
   plugins: [],

@@ -98,8 +98,8 @@ const Question = ({ filters }) => {
 
   return (
     <div className="flex flex-col w-screen h-screen place-content-center items-center">
-      <Card className="lg:w-1/2 md:w-3/5 h-1/2 overflow-y-scroll hideScroll">
-        <small className="text-right pt-4 pr-4 text-sm text-green-500 bold">
+      <Card className="w-72 sm:w-1/2 lg:w-auto h-auto overflow-y-scroll hideScroll">
+        <small className="text-right pt-4 pr-4 text:[10px] sm:text-sm text-green-500 bold">
           {`Correct answers: ${progress}/${filters.noOfQuestions}`}
         </small>
         <h1 className="lg:text-4xl md:text-2xl bold pl-6 text-slate-800 text-center pt-8 pr-2">
@@ -112,8 +112,8 @@ const Question = ({ filters }) => {
                 return (
                   <div className="pb-2">
                     <p
-                      className="lg:w-96  md:w-72 h-auto break-normal text-center text-white bg-gray-400 hover:bg-gray-500 
-                      pt-1 pb-1 pl-2 pr-2 bold lg:text-xl md:text-base rounded-3xl break-all"
+                      className=" w-56 lg:w-96 h-auto break-normal text-center text-white bg-gray-400 hover:bg-gray-500 
+                      pt-1 pb-1 pl-2 pr-2 sm:bold text-[14px] lg:text-xl md:text-base rounded-3xl break-all"
                       key={Math.random()}
                       onClick={(e) =>
                         checkAnswer(
@@ -145,7 +145,7 @@ const Question = ({ filters }) => {
       </div>
       {modalVisibility && (
         <div className="flex absolute w-screen h-screen place-content-center items-center">
-          <Card className="flex absolute place-content-center items-center w-5/12 h-5/12 z-10">
+          <Card className="flex absolute place-content-center items-center w-56 sm:w-5/12 h-5/12 z-10">
             <h1 className="lg:text-6xl md:text-3xl bold pl-6 pb-4 text-slate-800 text-center pt-8 pr-2 pl-2 pb-2">
               Congrats!
             </h1>
@@ -153,7 +153,7 @@ const Question = ({ filters }) => {
             <div className="py-4">
               <button
                 onClick={() => navigate("/profile")}
-                class="relative inline-flex items-center px-12 py-1 overflow-hidden btn-txt text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50"
+                class="relative inline-flex items-center px-12 py-1 overflow-hidden text-[12px] sm:text-[1.25rem] text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50"
               >
                 <span class="absolute left-0 block w-full h-0 transition-all bg-orange-500 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
                 <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
