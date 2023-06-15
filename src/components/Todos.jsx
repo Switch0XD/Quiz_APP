@@ -43,7 +43,10 @@ const Todos = () => {
     <>
       <div className="grid lg:grid-cols-2 md:grid-cols-1 pt-10 gap-4">
         {data.map((item) => (
-          <div className="flex place-content-center items-center">
+          <div
+            className="flex place-content-center items-center"
+            key={Math.random()}
+          >
             <Card className="w-9/12 md:w-4/5 h-48 m-4 hover:scale-110 ease-in-out duration-300 overflow-hidden">
               <img
                 src={item.image}
@@ -69,9 +72,9 @@ const Todos = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       ></path>
                     </svg>
