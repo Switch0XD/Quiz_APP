@@ -29,7 +29,7 @@ const Signup = () => {
     promise.then(
       function (response) {
         console.log(response);
-        navigate("/"); // where we want to redriect
+        navigate("/login"); // where we want to redriect
       },
       function (error) {
         console.log(error);
